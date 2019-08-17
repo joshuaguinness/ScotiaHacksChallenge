@@ -1,5 +1,8 @@
 #text
-{color: antiquewhite}
+{
+  color: antiquewhite;
+  padding: 100px
+}
 
 li{margin: 10px 0;}
 a:link, a:visited {
@@ -31,4 +34,12 @@ linear-gradient(115.78deg, #191B53 0%, #471F53 98.47%);
 #trust
 {
     text-align: center
+}
+
+#logo{
+  text-align: center
+}
+#instr
+{
+ padding: 100px
 }

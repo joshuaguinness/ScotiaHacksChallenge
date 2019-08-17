@@ -17,7 +17,7 @@ app.get('/api/read-teams', (req, res) => {
 
     const fs = require('fs')
 
-    fs.readFile('/data/teams.json', (err, fileData) => {
+    fs.readFile('public/data/teams.json', (err, fileData) => {
         if (err) {
             res.status(400).send({
                 success: 'false',

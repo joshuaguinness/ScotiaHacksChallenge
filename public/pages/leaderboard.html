@@ -1,18 +1,44 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>Scotia Students</title>
-		<link rel="stylesheet" type="text/css" href="style.css">
-		<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-	</head>
+
+<head>
+  <title>Scotia Students</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script>
+    function updateLeaderboard() {
+      var text = '{ "Teams": [' +
+        '{ "TeamName": "Best Team", "TeamMembers": [ {"Name": "Joshua"}, {"Name": "DJ"}, {"Name": "Stanley"} ], "Money": 1500 },' +
+        '{ "TeamName": "Super Cool People", "TeamMembers": [ {"Name": "Lisa"}, {"Name": "Daniel"}, {"Name": "Emma"} ], "Money": 1400 },' +
+        '{ "TeamName": "Mac Bes U", "TeamMembers": [ {"Name": "Arina"}, {"Name": "Jess"}, {"Name": "Ryan"} ], "Money": 300 } ] }';
+
+      var teamsObj = JSON.parse(text);
+
+      console.log(teamsObj.Teams[0].TeamName);
+
+      document.getElementById("name1").innerHTML = teamsObj.Teams[0].TeamName;
+      document.getElementById("name2").innerHTML = teamsObj.Teams[1].TeamName;
+      document.getElementById("name3").innerHTML = teamsObj.Teams[2].TeamName;
+
+      document.getElementById("score1").innerHTML = teamsObj.Teams[0].Money;
+      document.getElementById("score2").innerHTML = teamsObj.Teams[1].Money;
+      document.getElementById("score3").innerHTML = teamsObj.Teams[2].Money;
+    }
+  </script>
+</head>
 
 <body>
-    <!-- NAVIGATION BAR -->
-	 <div class="jumbotron text-center">
-            <img src="../Img/scotiabank-logo-red-desktop-200px.svg">
-         <h1> Leaderboard </h1>
-     </div>
-    <!-- <div class="container">
+  <!-- NAVIGATION BAR -->
+  <div class="jumbotron text-center">
+    <img src="../Img/scotiabank-logo-red-desktop-200px.svg">
+    <h1> Leaderboard </h1>
+  </div>
+
+  <center><button onclick="updateLeaderboard()">Update Leaderboard</button></center>
+
+  <br>
+  <!-- <div class="container">
         <form>
             <fieldset>
             Name: <br>   
@@ -32,30 +58,69 @@
         </form>
     </div>   -->
 
-    <table class="table table-striped">
-        <thead>
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">Team</th>
-            <th scope="col">Wealth</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>Narks</td>
-            <td id='score1'>100</td>
-          </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>OGs</td>
-            <td id='score2'>100</td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td>Birds</td>
-            <td id='score3'>100</td>
-          </tr>
-        </tbody>
-      </table>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Team #</th>
+        <th scope="col">Team</th>
+        <th scope="col">Money</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">1</th>
+        <td id="name1"></td>
+        <td id='score1'></td>
+      </tr>
+      <tr>
+        <th scope="row">2</th>
+        <td id="name2"></td>
+        <td id='score2'></td>
+      </tr>
+      <tr>
+        <th scope="row">3</th>
+        <td id="name3"></td>
+        <td id='score3'></td>
+      </tr>
+    </tbody>
+  </table>
 </body>
+
+<!-- <script>
+    const fs = require('fs')
+
+    function jsonReader(filePath, cb) {
+      fs.readFile(filePath, (err, fileData) => {
+        if (err) {
+          return cb && cb(err)
+        }
+        try {
+          const object = JSON.parse(fileData)
+          return cb && cb(null, object)
+        } catch (err) {
+          return cb && cb(err)
+        }
+      })
+    }
+
+
+    function updateLeaderboard() {
+      jsonReader('/data/teams.json', (err, teamsObj) => {
+      if (err) {
+        console.log(err)
+        return
+      }
+      console.log(teams.Teams[0].TeamName)
+    })
+        // fetch('/data/teams.json')
+        //   .then((response) => {
+        //     return response.json();
+        //   })
+        //   .then((data) => {
+        //     console.log(data);
+        //     var teamsObj = JSON.parse(data);
+        //   }).catch(function (error) {
+        //     console.log(error);
+        //   });
+      }
+  </script> -->

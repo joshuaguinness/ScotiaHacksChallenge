@@ -1,33 +1,33 @@
-body, html {
+/* body, html {
     height: 100%;
-}
+} */
 
 /* The hero image */
-.hero-image {
+/* .hero-image { */
   /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
-  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)), url("velocity-header.jpg");
+  /* background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)), url("velocity-header.jpg"); */
 
   /* Set a specific height */
-  height: 65%;
+  /* height: 65%; */
 
   /* Position and center the image to scale nicely on all screens */
-  background-position: center 30%;
+  /* background-position: center 30%;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
-}
+} */
 
 /* Place text in the middle of the image */
-.hero-text {
+/* .hero-text {
   text-align: center;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   color: white;
-}
+} */
 
-
+/* 
 .marketing {
   margin-top: 4em;
   text-align: center;
@@ -74,49 +74,80 @@ body, html {
 
 #cohort img {
   width: 90%;
-}
+} */
 
-.hero-image2 {
+/* .hero-image2 { */
   /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
-  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.3)), url("velocity-cohort-fun.jpg");
+  /* background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.3)), url("velocity-cohort-fun.jpg"); */
 
   /* Set a specific height */
-  height: 65%;
+  /* height: 65%; */
 
   /* Position and center the image to scale nicely on all screens */
-  background-position: center 35%;
+  /* background-position: center 35%;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
-}
+} */
 
 /*
 /*
 /*
 /* EXPERIENCE PAGE */
 
-.hero-image3 {
+/* .hero-image3 { */
   /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)), url("velocity-cohort-fun.jpg");
+  /* background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)), url("velocity-cohort-fun.jpg"); */
 
   /* Set a specific height */
-  height: 65%;
+  /* height: 65%; */
 
   /* Position and center the image to scale nicely on all screens */
-  background-position: center 35%;
+  /* background-position: center 35%;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
-}
+} */
 
 
 /* Place text in the middle of the image */
-.hero-text3 {
+/* .hero-text3 {
   text-align: center;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   color: white;
+} */
+
+
+a:link, a:visited {
+background-color: #f44336;
+color: white;
+padding: 15px 25px;
+text-align: center;
+text-decoration: none;
+display: inline-block;
 }
 
+a:hover, a:active {
+background-color: red;
+}
+
+#syn{
+/* background */
+position: absolute;
+left: 0%;
+right: -2.59%;
+top: 0%;
+bottom: -2.59%;
+background: linear-gradient(0deg, #F23232 0%, #001C51 99.32%), 
+linear-gradient(180deg, #165595 0%, #5DBDCD 100%), 
+linear-gradient(0deg, #140F26, #140F26), 
+linear-gradient(115.78deg, #191B53 0%, #471F53 98.47%);
+}
+
+#trust
+{
+    text-align: center
+}

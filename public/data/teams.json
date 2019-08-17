@@ -1,0 +1,28 @@
+{
+  "Teams": [
+    {
+      "TeamName": "Best Team",
+      "TeamMembers": [
+        {"Name": "Joshua"},
+        {"Name": "DJ"},
+        {"Name": "Stanley"} ],
+      "Money": 1500
+    },
+    {
+      "TeamName": "Super Cool People",
+      "TeamMembers": [
+        {"Name": "Lisa"},
+        {"Name": "Daniel"},
+        {"Name": "Emma"} ],
+      "Money": 1400
+    },
+    {
+      "TeamName": "Mac Bes U",
+      "TeamMembers": [
+        {"Name": "Arina"},
+        {"Name": "Jess"},
+        {"Name": "Ryan"} ],
+      "Money": 300
+    }
+  ]
+}

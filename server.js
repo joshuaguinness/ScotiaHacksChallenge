@@ -36,6 +36,23 @@ app.get('/api/read-teams', (req, res) => {
     })
   });
 
+// app.get('/api/write-teams', (req, res) => {
+//     const fs = require('fs')
+//     const customer = {
+//         name: "Newbie Co.",
+//         order_count: 0,
+//         address: "Po Box City",
+//     }
+//     const jsonString = JSON.stringify(customer)
+//     fs.writeFile('./newCustomer.json', jsonString, err => {
+//         if (err) {
+//             console.log('Error writing file', err)
+//         } else {
+//             console.log('Successfully wrote file')
+//         }
+//     })
+// })
+
 app.use(express.static('public'));
 
 app.listen(PORT, function() {

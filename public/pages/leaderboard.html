@@ -8,6 +8,11 @@
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <script>
 
+    function getData() {
+      var teamName = document.getElementById("team-name").value;
+      var newMoney = document.getElementById("new-money").value;
+    }
+
     function updateLeaderboard() {
 
       var data;
@@ -74,4 +79,17 @@
       </tr>
     </tbody>
   </table>
+
+  <br><br><br>
+
+  <center>
+    <p>Update Team Money:</p>
+  </center>
+
+  <center><input type="text" id="team-name" value="Team Name" /></center>
+
+  <center><input type="text" id="new-money" value="New Money Value" /></center>
+
+  <center><button onclick="">Submit</button></center>
+
 </body>

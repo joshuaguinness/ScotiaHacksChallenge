@@ -1,122 +1,68 @@
-body, html {
-    height: 100%;
+#text
+{
+  color: antiquewhite;
+  padding: 100px
 }
 
-/* The hero image */
-.hero-image {
-  /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
-  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.5)), url("velocity-header.jpg");
-
-  /* Set a specific height */
-  height: 65%;
-
-  /* Position and center the image to scale nicely on all screens */
-  background-position: center 30%;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
+li
+{margin: 10px 0;
+}
+a:link, a:visited 
+{
+background-color: #f44336;
+color: white;
+padding: 15px 25px;
+text-align: center;
+text-decoration: none;
+display: inline-block;
 }
 
-/* Place text in the middle of the image */
-.hero-text {
-  text-align: center;
+a:hover, a:active 
+{
+background-color: red;
+}
+
+#syn{
+/* background */
+position: absolute;
+left: 0%;
+right: -2.59%;
+top: 0%;
+bottom: -2.59%;
+background: linear-gradient(0deg, #F23232 0%, #001C51 99.32%), 
+linear-gradient(180deg, #165595 0%, #5DBDCD 100%), 
+linear-gradient(0deg, #140F26, #140F26), 
+linear-gradient(115.78deg, #191B53 0%, #471F53 98.47%);
+}
+
+#trust
+{
+    text-align: center
+}
+
+#logo{
+  text-align: center
+}
+#instr
+{
+ padding: 100px
+}
+
+#navmap{
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: white;
-}
-
-
-.marketing {
-  margin-top: 4em;
+  bottom: 10px;
+  width: 30%;
+  border: 3px solid rgb(19, 1, 1);
   text-align: center;
-  margin-bottom:4em;
+  padding: 40px 40px 40px
 }
 
-.marketing .col-lg-4 {
-  margin-bottom: 1.5rem;
-  text-align: center;
-}
-.marketing h2 {
-  font-weight: 400;
-}
-.marketing .col-lg-4 p {
-  margin-right: .75rem;
-  margin-left: .75rem;
-}
-
-#recruit {
-  margin-bottom: 4em;
-}
-
-#recruit img {
-  width: 100%;
-}
-
-#commitment img {
-  width: 100%;
-}
-
-#quote {
-  margin-bottom: 2em;
-}
-
-#quote img {
-  margin-bottom: 2em;
-  border-radius: 100%;
-  width: 80%;
-  }
-
-#cohort {
-  text-align: center;
-}
-
-#cohort img {
-  width: 90%;
-}
-
-.hero-image2 {
-  /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
-  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.3)), url("velocity-cohort-fun.jpg");
-
-  /* Set a specific height */
-  height: 65%;
-
-  /* Position and center the image to scale nicely on all screens */
-  background-position: center 35%;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
-}
-
-/*
-/*
-/*
-/* EXPERIENCE PAGE */
-
-.hero-image3 {
-  /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)), url("velocity-cohort-fun.jpg");
-
-  /* Set a specific height */
-  height: 65%;
-
-  /* Position and center the image to scale nicely on all screens */
-  background-position: center 35%;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
-}
-
-
-/* Place text in the middle of the image */
-.hero-text3 {
-  text-align: center;
+#navmap1{
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: white;
+  top: 10px;
+  right: 10px;
+  width: 30%;
+  border: 3px solid rgb(19, 1, 1);
+  text-align: center;
+  padding: 20px 20px 20px
 }
-

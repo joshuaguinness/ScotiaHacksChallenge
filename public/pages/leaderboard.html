@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Scotia Students</title>
+  <link rel="stylesheet" type="text/css" href="../style.css">
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script>
+
+    function getData() {
+      var teamName = document.getElementById("team-name").value;
+      var newMoney = document.getElementById("new-money").value;
+    }
+
+    function updateLeaderboard() {
+
+      var data;
+
+      var xhttp = new XMLHttpRequest();
+
+      xhttp.open("GET", "/api/read-teams", true);
+      xhttp.onload = async function () {
+        // Begin accessing JSON data here
+        let data = await JSON.parse(this.response)
+        if (xhttp.status >= 200 && xhttp.status < 400) {
+          console.log(data.object)
+          // console.log(data.object.Teams[0].TeamName)
+          document.getElementById("name1").innerHTML = data.object.Teams[0].TeamName + " (" + data.object.Teams[1].TeamMembers[0].Name + ", " + data.object.Teams[1].TeamMembers[1].Name + ", " + data.object.Teams[1].TeamMembers[2].Name + ")"
+          document.getElementById("name2").innerHTML = data.object.Teams[1].TeamName + " (" + data.object.Teams[1].TeamMembers[0].Name + ", " + data.object.Teams[1].TeamMembers[1].Name + ", " + data.object.Teams[1].TeamMembers[2].Name + ")"
+          document.getElementById("name3").innerHTML = data.object.Teams[2].TeamName + " (" + data.object.Teams[2].TeamMembers[0].Name + ", " + data.object.Teams[2].TeamMembers[1].Name + ", " + data.object.Teams[2].TeamMembers[2].Name + ")"
+
+          document.getElementById("score1").innerHTML = data.object.Teams[0].Money;
+          document.getElementById("score2").innerHTML = data.object.Teams[1].Money;
+          document.getElementById("score3").innerHTML = data.object.Teams[2].Money;
+        } else {
+          console.log('error')
+        }
+      }
+      xhttp.send();
+    }
+  </script>
+</head>
+
+<body>
+  <!-- NAVIGATION BAR -->
+  <div class="jumbotron text-center">
+    <img src="../Img/scotiabank-logo-red-desktop-200px.svg">
+    <h1> Leaderboard </h1>
+  </div>
+
+  <center><button onclick="updateLeaderboard()">Update Leaderboard</button></center>
+
+  <br>
+
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Team #</th>
+        <th scope="col">Team</th>
+        <th scope="col">Money</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">1</th>
+        <td id="name1"></td>
+        <td id='score1'></td>
+      </tr>
+      <tr>
+        <th scope="row">2</th>
+        <td id="name2"></td>
+        <td id='score2'></td>
+      </tr>
+      <tr>
+        <th scope="row">3</th>
+        <td id="name3"></td>
+        <td id='score3'></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <br><br><br>
+
+  <center>
+    <p>Update Team Money:</p>
+  </center>
+
+  <center><input type="text" id="team-name" value="Team Name" /></center>
+
+  <center><input type="text" id="new-money" value="New Money Value" /></center>
+
+  <center><button onclick="">Submit</button></center>
+
+</body>

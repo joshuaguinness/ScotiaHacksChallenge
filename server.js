@@ -8,11 +8,6 @@ var path = require('path');
 
 var PORT = 3000;
 
-// app.get('/', function(req, res) {
-//     res.sendFile(path.join(__dirname + '/index.html'));
-// });
-
-// get all todos
 app.get('/api/read-teams', (req, res) => {
 
     const fs = require('fs')
@@ -23,22 +18,20 @@ app.get('/api/read-teams', (req, res) => {
                 success: 'false',
                 message: err
             })
-            // return cb && cb(err)
         }
         try {
             const object = JSON.parse(fileData)
             console.log(object)
-            res.status(200).send({
+            return res.status(200).send({
                 success: 'true',
-                message: 'JSON Object retrieved successfully'
+                message: 'JSON Object retrieved successfully',
+                object
               })
-            // return cb && cb(null, object)
         } catch(err) {
             res.status(500).send({
                 success: 'false',
                 message: err
             })
-            // return cb && cb(err)
         }
     })
   });

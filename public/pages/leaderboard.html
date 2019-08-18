@@ -8,32 +8,31 @@
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <script>
 
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-            console.log(this.responseText);
-       }
-    };
-    xhttp.open("GET", "/api/read-teams", true);
-    xhttp.send();
-
     function updateLeaderboard() {
-      var text = '{ "Teams": [' +
-        '{ "TeamName": "Best Team", "TeamMembers": [ {"Name": "Joshua"}, {"Name": "DJ"}, {"Name": "Stanley"} ], "Money": 1500 },' +
-        '{ "TeamName": "Super Cool People", "TeamMembers": [ {"Name": "Lisa"}, {"Name": "Daniel"}, {"Name": "Emma"} ], "Money": 1400 },' +
-        '{ "TeamName": "Mac Bes U", "TeamMembers": [ {"Name": "Arina"}, {"Name": "Jess"}, {"Name": "Ryan"} ], "Money": 300 } ] }';
 
-      var teamsObj = JSON.parse(text);
+      var data;
 
-      console.log(teamsObj.Teams[0].TeamName);
+      var xhttp = new XMLHttpRequest();
 
-      document.getElementById("name1").innerHTML = teamsObj.Teams[0].TeamName;
-      document.getElementById("name2").innerHTML = teamsObj.Teams[1].TeamName;
-      document.getElementById("name3").innerHTML = teamsObj.Teams[2].TeamName;
+      xhttp.open("GET", "/api/read-teams", true);
+      xhttp.onload = async function () {
+        // Begin accessing JSON data here
+        let data = await JSON.parse(this.response)
+        if (xhttp.status >= 200 && xhttp.status < 400) {
+          console.log(data.object)
+          // console.log(data.object.Teams[0].TeamName)
+          document.getElementById("name1").innerHTML = data.object.Teams[0].TeamName + " (" + data.object.Teams[1].TeamMembers[0].Name + ", " + data.object.Teams[1].TeamMembers[1].Name + ", " + data.object.Teams[1].TeamMembers[2].Name + ")"
+          document.getElementById("name2").innerHTML = data.object.Teams[1].TeamName + " (" + data.object.Teams[1].TeamMembers[0].Name + ", " + data.object.Teams[1].TeamMembers[1].Name + ", " + data.object.Teams[1].TeamMembers[2].Name + ")"
+          document.getElementById("name3").innerHTML = data.object.Teams[2].TeamName + " (" + data.object.Teams[2].TeamMembers[0].Name + ", " + data.object.Teams[2].TeamMembers[1].Name + ", " + data.object.Teams[2].TeamMembers[2].Name + ")"
 
-      document.getElementById("score1").innerHTML = teamsObj.Teams[0].Money;
-      document.getElementById("score2").innerHTML = teamsObj.Teams[1].Money;
-      document.getElementById("score3").innerHTML = teamsObj.Teams[2].Money;
+          document.getElementById("score1").innerHTML = data.object.Teams[0].Money;
+          document.getElementById("score2").innerHTML = data.object.Teams[1].Money;
+          document.getElementById("score3").innerHTML = data.object.Teams[2].Money;
+        } else {
+          console.log('error')
+        }
+      }
+      xhttp.send();
     }
   </script>
 </head>
@@ -48,25 +47,6 @@
   <center><button onclick="updateLeaderboard()">Update Leaderboard</button></center>
 
   <br>
-  <!-- <div class="container">
-        <form>
-            <fieldset>
-            Name: <br>   
-            <input type="text" name="name"><br>
-            Email:<br>
-            <input type="text" name="Email">
-            Degree:<br>
-            <input type="text" name="Degree">
-            School:<br>
-            <input type="text" name="schoolname">
-            Grad Year:<br>
-            <input type="text" name="Year">
-            Area of Interest:<br>
-            <input type="text" name="Interest">
-            <input type="submit" value="Submit">
-        </fieldset>
-        </form>
-    </div>   -->
 
   <table class="table table-striped">
     <thead>
@@ -95,42 +75,3 @@
     </tbody>
   </table>
 </body>
-
-<!-- <script>
-    const fs = require('fs')
-
-    function jsonReader(filePath, cb) {
-      fs.readFile(filePath, (err, fileData) => {
-        if (err) {
-          return cb && cb(err)
-        }
-        try {
-          const object = JSON.parse(fileData)
-          return cb && cb(null, object)
-        } catch (err) {
-          return cb && cb(err)
-        }
-      })
-    }
-
-
-    function updateLeaderboard() {
-      jsonReader('/data/teams.json', (err, teamsObj) => {
-      if (err) {
-        console.log(err)
-        return
-      }
-      console.log(teams.Teams[0].TeamName)
-    })
-        // fetch('/data/teams.json')
-        //   .then((response) => {
-        //     return response.json();
-        //   })
-        //   .then((data) => {
-        //     console.log(data);
-        //     var teamsObj = JSON.parse(data);
-        //   }).catch(function (error) {
-        //     console.log(error);
-        //   });
-      }
-  </script> -->

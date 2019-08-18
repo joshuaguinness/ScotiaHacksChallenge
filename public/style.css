@@ -4,8 +4,11 @@
   padding: 100px
 }
 
-li{margin: 10px 0;}
-a:link, a:visited {
+li
+{margin: 10px 0;
+}
+a:link, a:visited 
+{
 background-color: #f44336;
 color: white;
 padding: 15px 25px;
@@ -14,7 +17,8 @@ text-decoration: none;
 display: inline-block;
 }
 
-a:hover, a:active {
+a:hover, a:active 
+{
 background-color: red;
 }
 
@@ -42,4 +46,23 @@ linear-gradient(115.78deg, #191B53 0%, #471F53 98.47%);
 #instr
 {
  padding: 100px
+}
+
+#navmap{
+  position: absolute;
+  bottom: 10px;
+  width: 30%;
+  border: 3px solid rgb(19, 1, 1);
+  text-align: center;
+  padding: 40px 40px 40px
+}
+
+#navmap1{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 30%;
+  border: 3px solid rgb(19, 1, 1);
+  text-align: center;
+  padding: 20px 20px 20px
 }
